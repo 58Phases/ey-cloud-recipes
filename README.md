@@ -15,14 +15,7 @@ Follow these steps to use custom deployment recipes with your applications.
   recipes after the default Engine Yard recipes have run. When you
   update your recipes, just re-run `ey recipes upload -e ENV`.
 
+Continuous Integration
+======================
 
-Notes
-============
-
-In case someone has problems on running delayed_jobs, there are several things you can look at:
-
-* make sure there are monit processes running under `/etc/monit.d` and the file name should look like: `delayed_jobNUM.APP_NAME.monitrc` (ex. `delayed_job1.coupondudes.monitrc`)
-* if not, then make sure you have modified `cookbooks/delayed_job/recipes/default.rb` correctly, commit, and push the change. then execute these:
-  `ey recipes upload -e ENV` and
-  `ey recipes apply -e ENV`
-* in `cookbooks/delayed_job/recipes/default.rb`, make sure you include the right `node[:instance_role]` at line 6.
+[![Build Status](https://secure.travis-ci.org/engineyard/ey-cloud-recipes.png?branch=master)](http://travis-ci.org/engineyard/ey-cloud-recipes)
